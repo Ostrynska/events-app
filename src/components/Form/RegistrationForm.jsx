@@ -1,5 +1,4 @@
 import { Formik, Form, Field } from 'formik';
-import { useParams } from 'react-router-dom';
 
 const initialValues = {
   name: '',
@@ -13,8 +12,6 @@ const onSubmit = values => {
 };
 
 const RegistrationForm = () => {
-  const { id } = useParams();
-  console.log(id);
   return (
     <div>
       <h1>Registration Form</h1>

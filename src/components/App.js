@@ -15,7 +15,6 @@ function App() {
           <Route index element={<Events />} />
           <Route path="/registration" element={<Registration />} />
           <Route path="/participants" element={<Participants />} />
-          {/* <Route path="/blog/:id" element={<BlogPostPage />} /> */}
           <Route path="*" element={<div>Page not found</div>} />
         </Route>
       </Routes>
