@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { getEvents, getLoading, getError } from '../../redux/events/selectors';
+import { getEvents, getLoading } from '../../redux/events/selectors';
 import { fetchEvents } from '../../redux/events/operations';
 import EventListItem from '../Event/Event';
 
@@ -8,7 +8,6 @@ const EventsList = () => {
   const dispatch = useDispatch();
   const events = useSelector(getEvents);
   const loading = useSelector(getLoading);
-  const error = useSelector(getError);
 
   useEffect(() => {
     dispatch(fetchEvents());
@@ -26,7 +25,6 @@ const EventsList = () => {
           ))}
         </ul>
       )}
-      {/* {error && <p>{error}</p>} */}
     </section>
   );
 };
