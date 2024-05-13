@@ -26,7 +26,7 @@ const EventsList = () => {
           ))}
         </ul>
       )}
-      {error && <p>{error}</p>}
+      {/* {error && <p>{error}</p>} */}
     </section>
   );
 };
