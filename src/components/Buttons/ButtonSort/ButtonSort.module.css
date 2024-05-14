@@ -1,0 +1,11 @@
+.btnsort {
+    border: 1px solid var(--accent-primary);
+    padding: 5px;
+    border-radius: 5px;
+    transition: var(--transition);
+}
+
+.btnsort:hover {
+    border: 1px solid var(--hover);
+    background-color: var(--light-grey);
+}

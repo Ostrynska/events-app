@@ -1,8 +1,10 @@
 export const getEvents = state => state.events.items;
 
-export const getEvent = state => state.events.event;
+export const getSortCriteria = state => state.events.sortCriteria;
 
-// export const getDrugsList = state => state.shops.drugsList;
+export const getSortDirection = state => state.events.sortDirection;
+
+export const getEvent = state => state.events.event;
 
 export const getLoading = ({ events }) => events.loading;
 
