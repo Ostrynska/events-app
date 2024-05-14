@@ -1,0 +1,26 @@
+.wrapper {
+    margin-top: 20px;
+    position: relative;
+}
+
+.icon {
+    position: absolute;
+    left: 10px;
+    bottom: 15px;
+}
+
+.input {
+    outline: none;
+    width: 100%;
+    border: 1px solid var(--accent-primary);
+    background-color: var(--light-grey);
+    padding: 15px 15px 15px 40px;
+    border-radius: 5px;
+    font-size: 16px;
+    color: var(--black);
+    transition: var(--transition);
+}
+
+.input:hover, .input:focus  {
+    border: 1px solid var(--dark-grey);
+}

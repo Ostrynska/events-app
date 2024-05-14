@@ -6,7 +6,8 @@
     flex-direction: column;
     box-shadow: var(--box-shadow);
     padding: 1.5rem;
-    border: 1px solid var(--light-grey);
+    border: 1px solid var(--grey);
+    border-radius: 5px;
     height: auto;
     width: 100%;
     transition: var(--transition-cubic);
@@ -14,7 +15,7 @@
 
 @media screen and (min-width: 501px) {
     .item  {
-        width: 286px;
+        width:  273px;
     }
 }
 
