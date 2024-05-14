@@ -1,4 +1,8 @@
+import { useState } from 'react';
+import { useParams } from 'react-router-dom';
 import { Formik, Form, Field } from 'formik';
+
+import { addParticipant } from '../../services/events-api';
 
 import styles from './RegistrationForm.module.css';
 import ButtonSubmit from '../Buttons/ButtonSubmit/ButtonSubmit';
@@ -10,11 +14,24 @@ const initialValues = {
   referrer: '',
 };
 
-const onSubmit = values => {
-  console.log(values);
-};
-
 const RegistrationForm = () => {
+  // eslint-disable-next-line
+  const [isFormSubmitted, setIsFormSubmitted] = useState(false);
+
+  const { id } = useParams();
+
+  const onSubmit = async (values, { resetForm }) => {
+    try {
+      await addParticipant(id, values);
+    } catch (error) {
+      console.error('Error while adding participant:', error);
+    }
+
+    setIsFormSubmitted(true);
+    resetForm();
+
+    alert('Success');
+  };
   return (
     <section>
       <Formik initialValues={initialValues} onSubmit={onSubmit}>

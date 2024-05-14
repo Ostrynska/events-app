@@ -11,8 +11,6 @@ const EventsList = () => {
   const events = useSelector(getEvents);
   const loading = useSelector(getLoading);
 
-  console.log(events);
-
   useEffect(() => {
     dispatch(fetchEvents());
   }, [dispatch]);

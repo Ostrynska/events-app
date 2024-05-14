@@ -3,7 +3,7 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import * as api from '../../services/events-api';
 
 export const fetchEvents = createAsyncThunk(
-  'shops/fetch-events',
+  'events/fetch-events',
   async (_, thunkAPI) => {
     try {
       const data = await api.getEvents();
@@ -15,11 +15,10 @@ export const fetchEvents = createAsyncThunk(
 );
 
 export const fetchEvent = createAsyncThunk(
-  'shops/fetch-event',
+  'events/fetch-event',
   async (id, thunkAPI) => {
     try {
       const data = await api.getEventById(id);
-      console.log(data);
       return data;
     } catch ({ response }) {
       return thunkAPI.rejectWithValue(response.data);

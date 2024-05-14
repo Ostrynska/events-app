@@ -14,4 +14,11 @@ export const getEventById = async id => {
   return data;
 };
 
-// console.log(getEventById('6642051c7cc2a521f7696f61'));
+export const addParticipant = async (id, participantData) => {
+  const { data } = await instance.post(
+    `/events/${id}/participants`,
+    participantData,
+  );
+  console.log(data);
+  return data;
+};

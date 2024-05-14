@@ -4,7 +4,6 @@ import { fetchEvents, fetchEvent } from './operations';
 const initialState = {
   items: [],
   event: null,
-  participants: [],
   loading: false,
   error: null,
 };
