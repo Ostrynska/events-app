@@ -8,13 +8,13 @@ form {
 .inputwrapp {
     display: flex;
     flex-direction: column;
-    gap: 3px;
 }
 
 label {
     font-size: 16px;
     font-weight: 700;
     color: var(--accent-primary);
+    margin-bottom: 3px;
 }
 
 input {
@@ -39,30 +39,40 @@ input:hover, input:focus  {
 }
 
 .checkboxlabel {
-  color: var(--black);
-  font-weight: 400;
-  transition: var(--transition);
-  display: flex;
-  align-items: center;
+    color: var(--black);
+    font-weight: 400;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
 }
 
 .checkboxlabel:hover,
 .checkboxlabel:focus {
-  color: var(--accent-primary);
+    color: var(--accent-primary);
 }
 
 .checkbox {
-  width: 10px;
-  height: 10px;
-  margin-right: 8px;
-  cursor: pointer;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  border-radius: 4px;
-  padding: 10px !important;
+    width: 10px;
+    height: 10px;
+    margin-right: 8px;
+    cursor: pointer;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: 4px;
+    padding: 10px !important;
 }
 
 .checkbox:checked {
-  background-color: var(--accent-primary);
+    background-color: var(--accent-primary);
+}
+
+.error {
+    font-size: 12px;
+    font-weight: 600;
+    color: red;
+}
+
+.errorField {
+    border: 1px solid red;
 }
