@@ -1,0 +1,17 @@
+.btnback {
+    background-color: var(--accent-primary);
+    max-width: 100px;
+    border-radius: 5px;
+}
+
+.btnback:hover, .btnback:focus {
+    background-color: var(--hover);
+}
+
+.back {
+    color: var(--white) !important;
+}
+
+.back:hover, .back:focus {
+    background-color: var(--hover) !important;
+}

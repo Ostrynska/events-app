@@ -1,5 +1,8 @@
 import { Formik, Form, Field } from 'formik';
 
+import styles from './RegistrationForm.module.css';
+import ButtonSubmit from '../Buttons/ButtonSubmit/ButtonSubmit';
+
 const initialValues = {
   name: '',
   email: '',
@@ -13,57 +16,60 @@ const onSubmit = values => {
 
 const RegistrationForm = () => {
   return (
-    <div>
-      <h1>Registration Form</h1>
+    <section className={styles.section}>
       <Formik initialValues={initialValues} onSubmit={onSubmit}>
         {({ values }) => (
           <Form>
-            <div>
-              <label htmlFor="name">Full Name:</label>
+            <div className={styles.inputwrapp}>
+              <label htmlFor="name">Full Name</label>
               <Field type="text" id="name" name="name" />
             </div>
-            <div>
-              <label htmlFor="email">Email:</label>
+            <div className={styles.inputwrapp}>
+              <label htmlFor="email">Email</label>
               <Field type="email" id="email" name="email" />
             </div>
-            <div>
-              <label htmlFor="birthdate">Date of Birth:</label>
+            <div className={styles.inputwrapp}>
+              <label htmlFor="birthdate">Date of Birth</label>
               <Field type="date" id="birthdate" name="birthdate" />
             </div>
-            <div>
+            <div className={styles.inputwrapp}>
               <label>Where did you hear about this event?</label>
-              <div>
-                <label>
+              <div className={styles.checkboxwrapp}>
+                <label className={styles.checkboxlabel}>
                   <Field
-                    type="checkbox"
-                    name="referrerSocialMedia"
+                    className={styles.checkbox}
+                    type="radio"
+                    name="referrer"
                     value="socialMedia"
                   />
                   Social Media
                 </label>
-                <label>
+                <label className={styles.checkboxlabel}>
                   <Field
-                    type="checkbox"
-                    name="referrerFriends"
+                    className={styles.checkbox}
+                    type="radio"
+                    name="referrer"
                     value="friends"
                   />
                   Friends
                 </label>
-                <label>
+                <label className={styles.checkboxlabel}>
                   <Field
-                    type="checkbox"
-                    name="referrerFoundMyself"
+                    className={styles.checkbox}
+                    type="radio"
+                    name="referrer"
                     value="foundMyself"
                   />
                   Found Myself
                 </label>
               </div>
             </div>
-            <button type="submit">Submit</button>
+
+            <ButtonSubmit />
           </Form>
         )}
       </Formik>
-    </div>
+    </section>
   );
 };
 

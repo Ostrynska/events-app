@@ -1,0 +1,17 @@
+.btnsubmit {
+    margin-top: 25px;
+    background-color: var(--dark-grey);
+    color: var(--white);
+    display: flex;
+    justify-content: center;
+
+    max-width: 150px;
+    border-radius: 5px;
+    padding: 10px;
+    transition: var(--transition-cubic);
+}
+
+.btnsubmit:hover, .btnsubmit:focus {
+    background-color: var(--hover);
+    color: var(--white);
+}

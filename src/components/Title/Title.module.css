@@ -1,0 +1,15 @@
+.title {
+    color: var(--accent-primary);
+    text-transform: uppercase;
+    font-size: 35px;
+    margin-bottom: 40px;
+}
+
+.title::after {
+    content: '';
+    margin: 5px 0 10px;
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: var(--grey);
+}

@@ -14,14 +14,15 @@ export const fetchEvents = createAsyncThunk(
   },
 );
 
-// export const fetchDrugs = createAsyncThunk(
-//   'shops/fetch-drugs',
-//   async (id, thunkAPI) => {
-//     try {
-//       const data = await api.getShopById(id);
-//       return data.drugslist;
-//     } catch ({ response }) {
-//       return thunkAPI.rejectWithValue(response.data);
-//     }
-//   },
-// );
+export const fetchEvent = createAsyncThunk(
+  'shops/fetch-event',
+  async (id, thunkAPI) => {
+    try {
+      const data = await api.getEventById(id);
+      console.log(data);
+      return data;
+    } catch ({ response }) {
+      return thunkAPI.rejectWithValue(response.data);
+    }
+  },
+);

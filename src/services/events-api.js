@@ -9,7 +9,9 @@ export const getEvents = async () => {
   return data;
 };
 
-// export const getEventById = async id => {
-//   const { data } = await instance.get(`/events/${id}`);
-//   return data;
-// };
+export const getEventById = async id => {
+  const { data } = await instance.get(`/events/${id}`);
+  return data;
+};
+
+// console.log(getEventById('6642051c7cc2a521f7696f61'));

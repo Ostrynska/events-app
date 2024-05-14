@@ -4,10 +4,14 @@ import { getEvents, getLoading } from '../../redux/events/selectors';
 import { fetchEvents } from '../../redux/events/operations';
 import EventListItem from '../Event/Event';
 
+import styles from './EventsList.module.css';
+
 const EventsList = () => {
   const dispatch = useDispatch();
   const events = useSelector(getEvents);
   const loading = useSelector(getLoading);
+
+  console.log(events);
 
   useEffect(() => {
     dispatch(fetchEvents());
@@ -15,13 +19,13 @@ const EventsList = () => {
 
   return (
     <section>
-      <h2>Events</h2>
+      {/* <h2 className={styles.title}>Events</h2> */}
       {loading ? (
         <p>Loading ...</p>
       ) : (
-        <ul>
+        <ul className={styles.list}>
           {events.map(event => (
-            <EventListItem key={event._id} event={event} />
+            <EventListItem key={event.id} event={event} />
           ))}
         </ul>
       )}
