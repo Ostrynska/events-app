@@ -2,6 +2,7 @@ form {
     display: flex;
     flex-direction: column;
     gap: 20px;
+    width: 100%;
 }
 
 .inputwrapp {
@@ -19,7 +20,7 @@ label {
 input {
     outline: none;
     max-width: 750px;
-    border: 1px solid var(--light-grey);
+    border: 1px solid var(--grey);
     padding: 15px;
     border-radius: 5px;
     font-size: 16px;
