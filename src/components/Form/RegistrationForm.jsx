@@ -16,7 +16,7 @@ const onSubmit = values => {
 
 const RegistrationForm = () => {
   return (
-    <section className={styles.section}>
+    <section>
       <Formik initialValues={initialValues} onSubmit={onSubmit}>
         {({ values }) => (
           <Form>

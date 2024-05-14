@@ -1,28 +1,34 @@
 import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { getEvent } from '../../redux/events/selectors';
+import { getEvent, getLoading } from '../../redux/events/selectors';
 import { fetchEvent } from '../../redux/events/operations';
 import ButtonBack from '../../components/Buttons/ButtonBack/ButtonBack';
 import Title from '../../components/Title/Title';
+import ParticipantsList from '../../components/ParticipantsList/ParticipantsList';
 
 const ParticipantsPage = () => {
   const event = useSelector(getEvent);
-  console.log(event);
+  const loading = useSelector(getLoading);
   const { id } = useParams();
-  console.log(id);
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(fetchEvent(id));
   }, [dispatch, id]);
 
-  console.log(fetchEvent(id));
+  const title = event ? event.title : '';
 
   return (
     <main>
-      <ButtonBack />
-      <Title text={`"${event.title}" participants`} />
+      {loading && <div>Loading...</div>}
+      {event !== null && (
+        <>
+          <Title text={`"${title}" participants`} />
+          <ButtonBack />
+          <ParticipantsList participants={event.participants} />
+        </>
+      )}
     </main>
   );
 };

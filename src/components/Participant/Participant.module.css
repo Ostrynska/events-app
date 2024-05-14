@@ -1,0 +1,33 @@
+.item {
+    display: flex;
+    justify-content: space-between;
+    max-height: 400px;
+    width: 100%;
+    flex-direction: column;
+    box-shadow: var(--box-shadow);
+    padding: 1.5rem;
+    border: 1px solid var(--light-grey);
+    height: auto;
+    width: 100%;
+    transition: var(--transition-cubic);
+}
+
+@media screen and (min-width: 501px) {
+    .item  {
+        width: 320px;
+    }
+}
+
+.item:hover {
+    box-shadow: var(--hover-shadow);
+}
+
+.title {
+    margin-bottom: 20px;
+    font-size: 22px;
+}
+
+.description {
+    font-size: 14px;
+    color: var(--dark-grey);
+}
