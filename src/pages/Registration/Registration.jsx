@@ -7,6 +7,7 @@ const RegistrationPage = () => {
     <main>
       <Title text="Event registration" />
       <section>
+        <h2 hidden>Events Registration Form</h2>
         <ButtonBack />
         <RegistrationForm />
       </section>
