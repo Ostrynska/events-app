@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import PropTypes from 'prop-types';
 
 import ButtonSort from '../Buttons/ButtonSort/ButtonSort';
 
@@ -39,6 +40,10 @@ const SortBar = ({ onSort }) => {
       />
     </div>
   );
+};
+
+SortBar.propTypes = {
+  onSort: PropTypes.func.isRequired,
 };
 
 export default SortBar;

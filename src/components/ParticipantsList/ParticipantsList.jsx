@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 import Participant from '../Participant/Participant';
 
 import styles from './ParticipantsList.module.css';
@@ -10,6 +12,10 @@ const ParticipantsList = ({ participants }) => {
       ))}
     </ul>
   );
+};
+
+ParticipantsList.propTypes = {
+  participants: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
 
 export default ParticipantsList;

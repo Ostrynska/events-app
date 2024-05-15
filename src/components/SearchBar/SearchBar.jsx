@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
+
 import { CiSearch } from 'react-icons/ci';
 
 import styles from './SearchBar.module.css';
@@ -29,6 +31,10 @@ const SearchBar = ({ onSearch }) => {
       />
     </div>
   );
+};
+
+SearchBar.propTypes = {
+  onSearch: PropTypes.func.isRequired,
 };
 
 export default SearchBar;

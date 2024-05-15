@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 import EventListItem from '../Event/Event';
 
 import styles from './EventsList.module.css';
@@ -10,6 +12,10 @@ const EventsList = ({ events }) => {
       ))}
     </ul>
   );
+};
+
+EventsList.propTypes = {
+  events: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
 
 export default EventsList;

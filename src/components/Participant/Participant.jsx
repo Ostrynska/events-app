@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 import styles from './Participant.module.css';
 
 const Participant = ({ participant }) => {
@@ -7,6 +9,13 @@ const Participant = ({ participant }) => {
       <p className={styles.description}>{participant.email}</p>
     </li>
   );
+};
+
+Participant.propTypes = {
+  participant: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    email: PropTypes.string.isRequired,
+  }).isRequired,
 };
 
 export default Participant;

@@ -1,6 +1,8 @@
-import styles from './ButtonSort.module.css';
+import PropTypes from 'prop-types';
 
 import { MdArrowUpward, MdArrowDownward } from 'react-icons/md';
+
+import styles from './ButtonSort.module.css';
 
 const ButtonSort = ({ text, direction, onClick }) => {
   const getIcon = () => {
@@ -27,6 +29,12 @@ const ButtonSort = ({ text, direction, onClick }) => {
       {renderButtonText()}
     </button>
   );
+};
+
+ButtonSort.propTypes = {
+  text: PropTypes.string.isRequired,
+  direction: PropTypes.oneOf(['asc', 'desc']).isRequired,
+  onClick: PropTypes.func.isRequired,
 };
 
 export default ButtonSort;
