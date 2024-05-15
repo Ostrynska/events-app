@@ -1,0 +1,10 @@
+.notfound {
+    display: flex;
+    gap: 40px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    font-weight: 500;
+    height: 95vh;
+}

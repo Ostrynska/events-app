@@ -9,6 +9,7 @@ import Title from '../../components/Title/Title';
 import SortBar from '../../components/SortBar/SortBar';
 import ScrollToTop from '../../components/Buttons/ScrollToTop/ScrollToTop';
 import InfiniteScroll from '../../components/InfiniteScroll/InfiniteScroll';
+import Loader from '../../components/Loader/Loader';
 
 const EventsPage = () => {
   const [sortedEvents, setSortedEvents] = useState([]);
@@ -61,16 +62,24 @@ const EventsPage = () => {
   };
 
   return (
-    <main>
-      <Title text="Events" />
-      <section>
-        <h2 hidden>Events List</h2>
-        <SortBar onSort={handleSort} />
-        <EventsList events={sortedEvents} loading={loading} />
-        <InfiniteScroll onScrollEnd={loadMoreEvents} />
-      </section>
-      <ScrollToTop />
-    </main>
+    <>
+      <main>
+        <Title text="Events" />
+        <section>
+          <h2 hidden>Events List</h2>
+          {loading ? (
+            <Loader />
+          ) : (
+            <>
+              <SortBar onSort={handleSort} />
+              <EventsList events={sortedEvents} />
+            </>
+          )}
+        </section>
+        <ScrollToTop />
+      </main>
+      <InfiniteScroll onScrollEnd={loadMoreEvents} />
+    </>
   );
 };
 

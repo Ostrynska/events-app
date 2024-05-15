@@ -9,6 +9,7 @@ import ButtonBack from '../../components/Buttons/ButtonBack/ButtonBack';
 import Title from '../../components/Title/Title';
 import ParticipantsList from '../../components/ParticipantsList/ParticipantsList';
 import SearchBar from '../../components/SearchBar/SearchBar';
+import Loader from '../../components/Loader/Loader';
 
 const ParticipantsPage = () => {
   const { id } = useParams();
@@ -42,7 +43,7 @@ const ParticipantsPage = () => {
 
   return (
     <main>
-      {loading && <div>Loading...</div>}
+      {loading && <Loader />}
       {event !== null && (
         <>
           <Title text={`"${title}" participants`} />
