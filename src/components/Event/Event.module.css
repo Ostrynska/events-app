@@ -40,8 +40,24 @@
     margin-bottom: 30px;
 }
 
+.description::before {
+    content: '';
+    margin-bottom: 6px;
+    display: block;
+    width: 100%;
+    height: 0.5px;
+    background-color: var(--grey);
+}
+
 .wrapper {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.wrapper > p {
+    margin-bottom: 4px;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--accent-primary);
 }
