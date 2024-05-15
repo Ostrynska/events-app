@@ -14,7 +14,12 @@ const SearchBar = ({ onSearch }) => {
 
   return (
     <div className={styles.wrapper}>
-      <CiSearch className={styles.icon} size={24} color="#551a8b" />
+      <CiSearch
+        className={styles.icon}
+        size={22}
+        color="#551a8b"
+        aria-label="Search icon"
+      />
       <input
         className={styles.input}
         type="text"

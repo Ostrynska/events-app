@@ -63,9 +63,12 @@ const EventsPage = () => {
   return (
     <main>
       <Title text="Events" />
-      <SortBar onSort={handleSort} />
-      <EventsList events={sortedEvents} loading={loading} />
-      <InfiniteScroll onScrollEnd={loadMoreEvents} />
+      <section>
+        <h2 hidden>Events List</h2>
+        <SortBar onSort={handleSort} />
+        <EventsList events={sortedEvents} loading={loading} />
+        <InfiniteScroll onScrollEnd={loadMoreEvents} />
+      </section>
       <ScrollToTop />
     </main>
   );

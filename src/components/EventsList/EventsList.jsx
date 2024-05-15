@@ -4,7 +4,7 @@ import styles from './EventsList.module.css';
 
 const EventsList = ({ events, loading }) => {
   return (
-    <section>
+    <>
       {loading ? (
         <p>Loading ...</p>
       ) : (
@@ -14,7 +14,7 @@ const EventsList = ({ events, loading }) => {
           ))}
         </ul>
       )}
-    </section>
+    </>
   );
 };
 

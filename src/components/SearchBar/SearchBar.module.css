@@ -12,7 +12,7 @@
 
 .input {
     outline: none;
-    width: 100%;
+    min-width: 100%;
     border: 1px solid var(--grey);
     background-color: var(--light-grey);
     padding: 12px 12px 12px 40px;

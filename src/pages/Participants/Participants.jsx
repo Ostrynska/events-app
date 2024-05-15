@@ -46,9 +46,11 @@ const ParticipantsPage = () => {
       {event !== null && (
         <>
           <Title text={`"${title}" participants`} />
-          <ButtonBack />
-          <SearchBar onSearch={handleSearch} />
-          <ParticipantsList participants={filteredParticipants} />
+          <section>
+            <ButtonBack />
+            <SearchBar onSearch={handleSearch} />
+            <ParticipantsList participants={filteredParticipants} />
+          </section>
         </>
       )}
     </main>

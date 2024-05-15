@@ -5,9 +5,12 @@ import { MdArrowUpward, MdArrowDownward } from 'react-icons/md';
 const ButtonSort = ({ text, direction, onClick }) => {
   const getIcon = () => {
     return direction === 'asc' ? (
-      <MdArrowUpward className={styles.icon} />
+      <MdArrowUpward className={styles.icon} aria-label="Sort direction up" />
     ) : (
-      <MdArrowDownward className={styles.icon} />
+      <MdArrowDownward
+        className={styles.icon}
+        aria-label="Sort direction down"
+      />
     );
   };
 

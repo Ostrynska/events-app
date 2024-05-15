@@ -6,8 +6,10 @@ const RegistrationPage = () => {
   return (
     <main>
       <Title text="Event registration" />
-      <ButtonBack />
-      <RegistrationForm />
+      <section>
+        <ButtonBack />
+        <RegistrationForm />
+      </section>
     </main>
   );
 };

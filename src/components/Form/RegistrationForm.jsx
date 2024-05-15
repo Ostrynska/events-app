@@ -34,105 +34,101 @@ const RegistrationForm = () => {
     alert('Success');
   };
   return (
-    <section>
-      <Formik
-        initialValues={initialValues}
-        onSubmit={onSubmit}
-        validationSchema={validationSchema}
-      >
-        {({ values, errors, touched }) => (
-          <Form>
-            <div className={styles.inputwrapp}>
-              <label htmlFor="name">Full Name</label>
-              <Field
-                type="text"
-                id="name"
-                name="name"
-                className={errors.name && touched.name ? styles.errorField : ''}
-              />
-              <ErrorMessage
-                name="name"
-                component="div"
-                className={styles.error}
-              />
+    <Formik
+      initialValues={initialValues}
+      onSubmit={onSubmit}
+      validationSchema={validationSchema}
+    >
+      {({ values, errors, touched }) => (
+        <Form>
+          <div className={styles.inputwrapp}>
+            <label htmlFor="name">Full Name</label>
+            <Field
+              type="text"
+              id="name"
+              name="name"
+              className={errors.name && touched.name ? styles.errorField : ''}
+            />
+            <ErrorMessage
+              name="name"
+              component="div"
+              className={styles.error}
+            />
+          </div>
+          <div className={styles.inputwrapp}>
+            <label htmlFor="email">Email</label>
+            <Field
+              type="email"
+              id="email"
+              name="email"
+              className={errors.email && touched.email ? styles.errorField : ''}
+            />
+            <ErrorMessage
+              name="email"
+              component="div"
+              className={styles.error}
+            />
+          </div>
+          <div className={styles.inputwrapp}>
+            <label htmlFor="birthdate">Date of Birth</label>
+            <Field
+              type="date"
+              id="birthdate"
+              name="birthdate"
+              className={
+                errors.birthdate && touched.birthdate
+                  ? styles.errorField
+                  : styles.datePicker
+              }
+            />
+            <ErrorMessage
+              name="birthdate"
+              component="div"
+              className={styles.error}
+            />
+          </div>
+          <div className={styles.inputwrapp}>
+            <label>Where did you hear about this event?</label>
+            <div className={styles.checkboxwrapp}>
+              <label className={styles.checkboxlabel}>
+                <Field
+                  className={styles.checkbox}
+                  type="radio"
+                  name="referrer"
+                  value="socialMedia"
+                />
+                Social Media
+              </label>
+              <label className={styles.checkboxlabel}>
+                <Field
+                  className={styles.checkbox}
+                  type="radio"
+                  name="referrer"
+                  value="friends"
+                />
+                Friends
+              </label>
+              <label className={styles.checkboxlabel}>
+                <Field
+                  className={styles.checkbox}
+                  type="radio"
+                  name="referrer"
+                  value="foundMyself"
+                />
+                Found Myself
+              </label>
             </div>
-            <div className={styles.inputwrapp}>
-              <label htmlFor="email">Email</label>
-              <Field
-                type="email"
-                id="email"
-                name="email"
-                className={
-                  errors.email && touched.email ? styles.errorField : ''
-                }
-              />
-              <ErrorMessage
-                name="email"
-                component="div"
-                className={styles.error}
-              />
-            </div>
-            <div className={styles.inputwrapp}>
-              <label htmlFor="birthdate">Date of Birth</label>
-              <Field
-                type="date"
-                id="birthdate"
-                name="birthdate"
-                className={
-                  errors.birthdate && touched.birthdate
-                    ? styles.errorField
-                    : styles.datePicker
-                }
-              />
-              <ErrorMessage
-                name="birthdate"
-                component="div"
-                className={styles.error}
-              />
-            </div>
-            <div className={styles.inputwrapp}>
-              <label>Where did you hear about this event?</label>
-              <div className={styles.checkboxwrapp}>
-                <label className={styles.checkboxlabel}>
-                  <Field
-                    className={styles.checkbox}
-                    type="radio"
-                    name="referrer"
-                    value="socialMedia"
-                  />
-                  Social Media
-                </label>
-                <label className={styles.checkboxlabel}>
-                  <Field
-                    className={styles.checkbox}
-                    type="radio"
-                    name="referrer"
-                    value="friends"
-                  />
-                  Friends
-                </label>
-                <label className={styles.checkboxlabel}>
-                  <Field
-                    className={styles.checkbox}
-                    type="radio"
-                    name="referrer"
-                    value="foundMyself"
-                  />
-                  Found Myself
-                </label>
-              </div>
-              <ErrorMessage
-                name="referrer"
-                component="div"
-                className={styles.error}
-              />
-            </div>
+            <ErrorMessage
+              name="referrer"
+              component="div"
+              className={styles.error}
+            />
+          </div>
 
-            <ButtonSubmit />
-          </Form>
-        )}
-      </Formik>
-    </section>
+          <ButtonSubmit />
+        </Form>
+      )}
+    </Formik>
   );
 };
 
