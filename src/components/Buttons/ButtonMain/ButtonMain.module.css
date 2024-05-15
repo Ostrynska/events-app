@@ -1,0 +1,11 @@
+.btnmain {
+    border: 0.5px solid var(--accent-primary);
+    padding: 4px 8px;
+    color: var(--black);
+    background-color: var(--light-grey);
+}
+
+.btnmain:hover, .btnmain:focus {
+    background-color: var(--accent-primary);
+    color: var(--white);
+}

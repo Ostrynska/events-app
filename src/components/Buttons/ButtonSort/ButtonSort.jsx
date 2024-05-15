@@ -1,4 +1,5 @@
 import styles from './ButtonSort.module.css';
+
 import { MdArrowUpward, MdArrowDownward } from 'react-icons/md';
 
 const ButtonSort = ({ text, direction, onClick }) => {

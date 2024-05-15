@@ -7,6 +7,7 @@
   --dark-grey: #444343;
 
   --accent-primary: #551a8b;
+  --accent-secondary: #e8dbf529;
 
   --hover: #260c3e;
   --hover-shadow: rgba(0, 0, 0, 0.092) 0px 54px 55px,
@@ -114,7 +115,6 @@ button {
 
 a {
     text-decoration: none;
-    color: var(--accent-primary);
     padding: 5px;
     max-width: 100px;
     text-align: center;
@@ -125,8 +125,6 @@ a {
 }
 
 a:hover, a:focus {
-    background-color: var(--accent-primary);
-    color: var(--white);
     cursor: pointer;
     text-decoration: none;
 }

@@ -1,5 +1,4 @@
 import RegistrationForm from '../../components/Form/RegistrationForm';
-
 import ButtonBack from '../../components/Buttons/ButtonBack/ButtonBack';
 import Title from '../../components/Title/Title';
 

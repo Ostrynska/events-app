@@ -1,7 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+
 import { getEvents, getLoading } from '../../redux/events/selectors';
 import { fetchEvents } from '../../redux/events/operations';
+
 import EventsList from '../../components/EventsList/EventsList';
 import Title from '../../components/Title/Title';
 import SortBar from '../../components/SortBar/SortBar';

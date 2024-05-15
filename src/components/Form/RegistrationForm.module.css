@@ -76,3 +76,7 @@ input:hover, input:focus  {
 .errorField {
     border: 1px solid red;
 }
+
+.datePicker {
+    font-family: 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+}

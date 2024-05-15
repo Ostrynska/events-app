@@ -1,6 +1,6 @@
 import { useState } from 'react';
+
 import ButtonSort from '../Buttons/ButtonSort/ButtonSort';
-import { MdArrowUpward, MdArrowDownward } from 'react-icons/md';
 
 import styles from './SortBar.module.css';
 

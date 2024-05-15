@@ -11,7 +11,7 @@ import ButtonSubmit from '../Buttons/ButtonSubmit/ButtonSubmit';
 const initialValues = {
   name: '',
   email: '',
-  birthdate: '',
+  birthdate: new Date(),
   referrer: '',
 };
 
@@ -79,7 +79,9 @@ const RegistrationForm = () => {
                 id="birthdate"
                 name="birthdate"
                 className={
-                  errors.birthdate && touched.birthdate ? styles.errorField : ''
+                  errors.birthdate && touched.birthdate
+                    ? styles.errorField
+                    : styles.datePicker
                 }
               />
               <ErrorMessage

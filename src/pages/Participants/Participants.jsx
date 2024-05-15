@@ -1,8 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
+
 import { getEvent, getLoading } from '../../redux/events/selectors';
 import { fetchEvent } from '../../redux/events/operations';
+
 import ButtonBack from '../../components/Buttons/ButtonBack/ButtonBack';
 import Title from '../../components/Title/Title';
 import ParticipantsList from '../../components/ParticipantsList/ParticipantsList';
