@@ -1,70 +1,52 @@
-# Getting Started with Create React App
+# 📎 Events Registration App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome to the Events Registration App, a web-based application designed to streamline event registration processes!
 
-## Available Scripts
+## Description
+This application empowers users to register for upcoming events effortlessly. Here's what you can expect:
 
-In the project directory, you can run:
+### Events Board
+- Users can easily browse through a curated list of upcoming events, complete with essential details like event title, date, organizer, and brief descriptions.
+  - **Convenient Event Browsing**: Users can observe the paginated list of available events, with infinite scroll for an improved browsing experience.
+  - **Pre-populated Event Database**: Event information is readily available, stored in a pre-loaded database.
+  - **Sorting Capability for Events**: Users can sort events by title, event date, or organizer for quicker access.
 
-### `npm start`
+### Registration Form
+- Clicking on "Register" redirects users to the event registration page, where they can fill out a form with their name, email, birthdate, and referral source (e.g., social media, friends).
+  - **Effortless Registration**: A user-friendly registration form simplifies the process for attendees.
+  - **Database Integration**: Submitted responses are securely stored in the application's database.
+  - **Form Validation**: Built-in validation ensures data accuracy and completeness.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Participant Details
+- Participants can click on individual events to access additional details, including participant lists.
+  - **Comprehensive Insights**: Event attendees can view participant lists for enhanced engagement.
+  - **Search Functionality**: Users can search participants by full name or email for efficient navigation.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Tech Stack
+- **Client**: HTML, CSS, JavaScript (React)
+- **Server**: Node.js
+- **Deployment**: [www.render.com](https://www.render.com)
+  * **Frontend Repository Link** : [GitHub Repository](https://github.com/Ostrynska/events-app/)
+  * **Backend** : [GitHub Repository](https://github.com/Ostrynska/events-app-backend)
+- **Database**: MongoDB
 
-### `npm test`
+**Note**: The backend server is hosted on render.com's free tier. Please be aware that the initial response after prolonged inactivity may take 1-5 minutes.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## How To Run:
+1. Open your terminal (Mac OS) or cmd (Windows).
+2. Check npm version:
+   *  Run `npm -v` and verify it's installed correctly. 
+3. Install Dependencies:
+   *  Navigate to the project folder and execute `npm install`.
+4. Run Project:
+   *  Enter `npm start` in the terminal.
+5. Open [http://localhost:3000](http://localhost:3000) in your preferred browser to view the application.
 
-### `npm run build`
+## Live Demo
+- **Hosting URL**: [Event Registration App](https://event-registration-app-eliftech.netlify.app/)
+![Event Registration App](https://github.com/Ostrynska/events-app/assets/105549205/03c4f44a-cbce-48eb-9baa-8de343e7f517)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Additional Information
+- **Author**: [Ostrynska Kateryna](https://ostrynska-kateryna.netlify.app/)
+- For further inquiries or assistance, feel free to reach out to the author via [email](mailto:kateriinag@gmail.com) or the [website contact form](https://ostrynska-kateryna.netlify.app/contact).
+ 🎉
