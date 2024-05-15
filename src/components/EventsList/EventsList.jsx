@@ -1,5 +1,3 @@
-import { useEffect } from 'react';
-
 import EventListItem from '../Event/Event';
 
 import styles from './EventsList.module.css';
