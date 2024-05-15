@@ -1,0 +1,26 @@
+.scrollToTop {
+    position: fixed;
+    bottom: 74px;
+    right: 40px;
+    cursor: pointer;
+    transition: opacity 0.3s ease, transform 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    opacity: 0;
+    color: var(--accent-primary);
+    animation: bounce 1.5s infinite;
+}
+
+.scrollToTop.visible {
+    opacity: 1;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
