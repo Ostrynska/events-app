@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { getEvents, getLoading } from '../../redux/events/selectors';
 import { fetchEvents } from '../../redux/events/operations';
@@ -6,6 +6,7 @@ import EventsList from '../../components/EventsList/EventsList';
 import Title from '../../components/Title/Title';
 import SortBar from '../../components/SortBar/SortBar';
 import ScrollToTop from '../../components/Buttons/ScrollToTop/ScrollToTop';
+import InfiniteScroll from '../../components/InfiniteScroll/InfiniteScroll';
 
 const EventsPage = () => {
   const [sortedEvents, setSortedEvents] = useState([]);
@@ -16,7 +17,6 @@ const EventsPage = () => {
   const events = useSelector(getEvents);
   const loading = useSelector(getLoading);
   const [visibleEvents, setVisibleEvents] = useState(events.slice(0, 9));
-  const [scrollPosition, setScrollPosition] = useState(0);
 
   useEffect(() => {
     dispatch(fetchEvents());
@@ -42,28 +42,6 @@ const EventsPage = () => {
     setSortDirection(direction);
   };
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const position = window.scrollY;
-      const maxScroll =
-        document.documentElement.scrollHeight -
-        document.documentElement.clientHeight;
-      setScrollPosition(position);
-      if (
-        position >= maxScroll &&
-        !loading &&
-        visibleEvents.length < events.length
-      ) {
-        loadMoreEvents();
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, [loading, visibleEvents, events]);
-
   const loadMoreEvents = () => {
     const remainingEvents = events.slice(visibleEvents.length);
     const nextEvents = remainingEvents.slice(0, 6);
@@ -85,6 +63,7 @@ const EventsPage = () => {
       <Title text="Events" />
       <SortBar onSort={handleSort} />
       <EventsList events={sortedEvents} loading={loading} />
+      <InfiniteScroll onScrollEnd={loadMoreEvents} />
       <ScrollToTop />
     </main>
   );
