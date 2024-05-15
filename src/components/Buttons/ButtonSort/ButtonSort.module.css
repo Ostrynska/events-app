@@ -3,9 +3,38 @@
     padding: 5px;
     border-radius: 5px;
     transition: var(--transition);
+    box-shadow: var(--hover-shadow);
 }
 
-.btnsort:hover {
-    border: 1px solid var(--hover);
-    background-color: var(--light-grey);
+.icon {
+    color: var(--accent-primary);
+}
+
+.btnsort:hover, .btnsort:focus  {
+    background-color: var(--hover);
+    color: var(--white);
+    box-shadow: var(--box-shadow);
+}
+
+.btnsort:hover .icon {
+    color: var(--white);
+}
+
+.btnsort:focus .icon {
+    color: var(--white);
+}
+
+.wrapper {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+@media screen and (max-width: 480px) {
+    .wrapper  {
+        font-size: 12px;
+    }
+    .btnsort {
+        padding: 6px;
+    }
 }

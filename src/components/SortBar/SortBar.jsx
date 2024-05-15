@@ -20,30 +20,21 @@ const SortBar = ({ onSort }) => {
     onSort(criteria, newDirection);
   };
 
-  const getIcon = direction => {
-    return direction === 'asc' ? <MdArrowUpward /> : <MdArrowDownward />;
-  };
-
-  const renderButtonText = (text, direction) => {
-    return (
-      <>
-        {text} {getIcon(direction)}
-      </>
-    );
-  };
-
   return (
     <div className={styles.wrapper}>
       <ButtonSort
-        text={renderButtonText('Sort by Title', sortDirections.title)}
+        text={'Sort by Title'}
+        direction={sortDirections.title}
         onClick={() => handleSort('title')}
       />
       <ButtonSort
-        text={renderButtonText('Sort by Date', sortDirections.date)}
+        text={'Sort by Date'}
+        direction={sortDirections.date}
         onClick={() => handleSort('date')}
       />
       <ButtonSort
-        text={renderButtonText('Sort by Organizer', sortDirections.organizer)}
+        text={'Sort by Organizer'}
+        direction={sortDirections.organizer}
         onClick={() => handleSort('organizer')}
       />
     </div>

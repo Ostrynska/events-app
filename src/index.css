@@ -74,15 +74,15 @@ main {
     }
 }
 
- @media screen and (min-width: 1200px) {
+@media screen and (min-width: 1200px) {
     main  {
         padding: 6rem 6rem 0 6rem;
     }
- }
+}
 
- section {
+section {
   margin: 40px 0 40px;
- }
+}
 
 h1,
 h2,

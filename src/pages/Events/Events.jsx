@@ -1,37 +1,49 @@
-import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useEffect, useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { getEvents, getLoading } from '../../redux/events/selectors';
+import { fetchEvents } from '../../redux/events/operations';
 import EventsList from '../../components/EventsList/EventsList';
 import Title from '../../components/Title/Title';
 import SortBar from '../../components/SortBar/SortBar';
 
-import { sortEvents } from '../../redux/events/slice';
-import {
-  getSortCriteria,
-  getSortDirection,
-} from '../../redux/events/selectors';
-
 const EventsPage = () => {
-  // eslint-disable-next-line
-  const sortCriteria = useSelector(getSortCriteria);
-  console.log(sortCriteria);
-  const sortDirection = useSelector(getSortDirection);
+  const [sortedEvents, setSortedEvents] = useState([]);
+  const [sortBy, setSortBy] = useState(null);
+  const [sortDirection, setSortDirection] = useState(null);
 
   const dispatch = useDispatch();
+  const events = useSelector(getEvents);
+  const loading = useSelector(getLoading);
 
   useEffect(() => {
-    if (sortCriteria && sortDirection) {
-      dispatch(sortEvents(sortCriteria, sortDirection)); // Викликаємо сортування при зміні параметрів сортування
+    dispatch(fetchEvents());
+  }, [dispatch]);
+
+  useEffect(() => {
+    if (events.length > 0) {
+      const sorted = [...events].sort((a, b) => {
+        const propA = a[sortBy] || ''; // Якщо властивість не існує, встановлюємо порожній рядок
+        const propB = b[sortBy] || ''; // Якщо властивість не існує, встановлюємо порожній рядок
+        if (sortDirection === 'asc') {
+          return propA.localeCompare(propB);
+        } else {
+          return propB.localeCompare(propA);
+        }
+      });
+      setSortedEvents(sorted);
     }
-  }, [sortCriteria, sortDirection, dispatch]);
+  }, [events, sortBy, sortDirection]);
 
   const handleSort = (criteria, direction) => {
-    dispatch(sortEvents(criteria, direction));
+    setSortBy(criteria);
+    setSortDirection(direction);
   };
+
   return (
     <main>
       <Title text="Events" />
       <SortBar onSort={handleSort} />
-      <EventsList />
+      <EventsList events={sortedEvents} loading={loading} />
     </main>
   );
 };
