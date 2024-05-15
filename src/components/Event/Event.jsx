@@ -6,6 +6,10 @@ const Event = ({ event }) => {
   return (
     <li className={styles.item}>
       <h3 className={styles.title}>{event.title}</h3>
+      <div className={styles.wrapper}>
+        <p>{event.date}</p>
+        <p>{event.organizer}</p>
+      </div>
       <p className={styles.description}>{event.description}</p>
       <div className={styles.wrapper}>
         <ButtonMain to={`${event._id}/registration`} text={'Register'} />
